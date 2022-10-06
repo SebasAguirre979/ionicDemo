@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Api</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <p>Hola Mundito</p>
+    <ion-input aria-placeholder="Escribe aqui lo que quieras" [(ngModel)]="name"></ion-input>
+  </ion-card-content>
+  <ion-card-content>
+    El texto ingresado en el anterios campo es: {{name}}
+  </ion-card-content>
+
+  <ion-card>
+    <ion-item *ngFor="let character of characters" [routerLink]="['/profile/' + character.id]">
+      <ion-avatar slot="start">
+        <img src="{{character.image}}">
+      </ion-avatar>
+      <ion-label>{{character.name}}</ion-label>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
